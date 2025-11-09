@@ -1,0 +1,175 @@
+/* 🌿 Universal Reset */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background: #f0fdf4;
+  font-family: "Poppins", "Arial", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* HEADER CONTAINER */
+.header {
+  background: linear-gradient(135deg, #059669, #10b981); /* Emerald gradient */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 50px;
+  min-height: 80px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  font-family: "Poppins", sans-serif;
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+
+/* HEADER TITLE */
+.header h1 {
+  display: flex;
+  position: relative;
+  align-items: center;
+  gap: 10px; /* space between icon and text */
+  font-family: "Poppins", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: #ffffff; /* white text over green header */
+  letter-spacing: 1px;
+  margin: 0;
+  cursor: pointer;
+  transition: transform 0.25s ease, text-shadow 0.25s ease;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.35);
+}
+
+/* Hover effect – subtle scale and glow */
+.header h1:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.35);
+}
+
+/* 🛒 Cart icon styling */
+.header h1 img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* makes icon white to match text */
+  transition: transform 0.2s ease;
+}
+
+/* Slight pop on hover */
+.header h1:hover img {
+  transform: rotate(-10deg) scale(1.1);
+}
+
+.header h1::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -6px; /* places line below the heading */
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #10b981, #34d399);
+  border-radius: 2px;
+}
+
+/* NAVIGATION LINKS */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* INDIVIDUAL LINK */
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.nav-links a:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+/* CART LINK */
+.nav-links a:last-child {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* CART ICON */
+.nav-links img {
+  vertical-align: middle;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  filter: invert(1);
+}
+
+.nav-links img:hover {
+  transform: scale(1.1);
+}
+
+/* CART ITEM COUNT BUTTON */
+.nav-links button {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  /* background: #fff;
+  color: #059669;  */
+  background: #ff0000;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  border: none;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+/* ACTIVE LINK */
+.nav-links a.active {
+  border-bottom: 2px solid #fff;
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+/* 🌿 EMERALD GREEN THEME VARIABLES */
+:root {
+  --primary: #059669;
+  --primary-light: #10b981;
+  --primary-hover: #047857;
+  --bg: #f0fdf4;
+  --text: #064e3b;
+  --card-bg: #ffffff;
+  --button-text: #ffffff;
+}

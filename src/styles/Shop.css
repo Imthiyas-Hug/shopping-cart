@@ -1,0 +1,391 @@
+/* 🌿 CARD CONTAINER */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  justify-items: center;
+  align-items: start;
+  padding: 40px 40px;
+  background: #f0fdf4; /* soft green tint */
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+/* 🌿 Product Card */
+.card {
+  width: 100%;
+  max-width: 300px;
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px 18px 26px;
+  transition: all 0.35s ease;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+
+/* 🖼️ Product Image */
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  background-color: #f9fafb;
+  border-radius: 10px;
+  margin-bottom: 14px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+/* 🏷️ Product Title */
+.product-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: #064e3b;
+  line-height: 1.4;
+  height: 44px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+/* 💰 Price */
+.price {
+  font-size: 20px;
+  font-weight: 700;
+  color: #059669;
+  margin: 6px 0 14px 0;
+}
+
+/* ➕➖ Quantity Container */
+.card .quantity-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+/* ➕➖ Buttons */
+.quantity-control button {
+  background: #059669;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.quantity-control button:hover {
+  background: #047857;
+  transform: scale(1.1);
+}
+
+.quantity-control button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* 🔢 Quantity Input */
+.quantity-control input {
+  width: 60px;
+  height: 36px;
+  text-align: center;
+  border: 2px solid #d1fae5;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #065f46;
+  outline: none;
+  background: #f9fafb;
+}
+
+/* 🛒 Add to Cart Button */
+.card > button:last-child {
+  background: linear-gradient(135deg, #059669, #10b981);
+  border: none;
+  color: #fff;
+  padding: 12px 22px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(5, 150, 105, 0.3);
+}
+
+.card > button:last-child:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(5, 150, 105, 0.3);
+}
+
+.card > button:last-child:active {
+  transform: translateY(0);
+  opacity: 0.9;
+}
+
+/* ✨ Decorative Accent Line on Hover */
+.card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #059669, #10b981);
+  border-radius: 4px;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.card:hover::after {
+  width: 80%;
+}
+
+/* 🌿 Section Heading */
+.section-heading {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  color: #047857; /* deep emerald */
+  margin: 60px 0 40px;
+  position: relative;
+  letter-spacing: 0.5px;
+  animation: fadeUp 0.6s ease forwards;
+  margin-top: 30px;
+  margin-bottom: 0px;
+}
+
+/* Decorative underline */
+.section-heading::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #059669, #10b981);
+  margin: 12px auto 0;
+  border-radius: 4px;
+}
+
+/* Fade-in animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🌿 Responsive Layouts */
+@media (max-width: 768px) {
+  .card-container {
+    padding: 40px 20px;
+    gap: 20px;
+  }
+  .card {
+    max-width: 100%;
+  }
+  .section-heading {
+    font-size: 30px;
+    margin: 40px 0 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 16px;
+  }
+  .product-title {
+    font-size: 15px;
+  }
+  .price {
+    font-size: 17px;
+  }
+  .section-heading {
+    font-size: 26px;
+  }
+  .section-heading::after {
+    width: 60px;
+    height: 3px;
+  }
+}
+
+.status-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  height: 80vh;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #064e3b;
+  animation: fadeIn 0.5s ease;
+}
+
+/* 🌀 Spinner Animation */
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #e5e7eb;
+  border-top: 5px solid #059669;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* 🟢 Loading message */
+.status-message.loading p {
+  color: #047857;
+  font-size: 16px;
+}
+
+/* ⚠️ Error message style */
+.status-message.error {
+  color: #b91c1c;
+}
+
+.status-message.error .error-icon {
+  font-size: 42px;
+  animation: pulse 1.4s infinite;
+}
+
+/* ⚡ Pulse animation for warning icon */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
+
+.status-message.error p {
+  color: #b91c1c;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+/* 🌿 Fade-in animation for messages */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* 🛒 Cart bounce glow */
+@keyframes cartGlow {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0 rgba(16, 185, 129, 0));
+  }
+  30% {
+    transform: scale(1.25);
+    filter: drop-shadow(0 0 15px rgba(16, 185, 129, 0.7));
+  }
+  60% {
+    transform: scale(0.95);
+    filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.5));
+  }
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0 rgba(16, 185, 129, 0));
+  }
+}
+
+.cart-bounce {
+  animation: cartGlow 0.8s ease-in-out;
+}
+
+/* 🌊 Ripple effect around cart */
+.cart-ripple {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background: rgba(16, 185, 129, 0.4);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  animation: cartPulse 1s ease-out forwards;
+  z-index: -1;
+}
+
+@keyframes cartPulse {
+  0% {
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(3);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(6);
+  }
+}
+
+/* ✅ Toast Notification */
+.toast {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%) translateY(40px);
+  background: linear-gradient(135deg, #059669, #10b981);
+  color: #fff;
+  padding: 12px 22px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.25);
+  opacity: 0;
+  transition: all 0.4s ease;
+  z-index: 99999;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}

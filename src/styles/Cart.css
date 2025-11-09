@@ -1,0 +1,417 @@
+/* 🌿 EMPTY CART STYLING */
+.cart-empty {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 60px 30px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  max-width: 500px;
+  width: 90%;
+  margin: 80px auto;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  animation: fadeIn 0.6s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 🛒 Optional Empty Cart Image */
+.cart-empty img {
+  width: 120px;
+  height: auto;
+  margin-bottom: 10px;
+  opacity: 0.9;
+}
+
+.cart-empty p {
+  font-size: 18px;
+  color: #065f46;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+/* Continue Shopping button */
+.cart-empty button {
+  background: linear-gradient(135deg, #059669, #10b981);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 36px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(5, 150, 105, 0.25);
+  transition: all 0.3s ease;
+}
+
+.cart-empty button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(5, 150, 105, 0.35);
+}
+
+/* 🌿 Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🛍️ MAIN CART PAGE LAYOUT */
+.cart-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 40px 60px;
+  background: #f0fdf4;
+  border-radius: 16px;
+}
+
+/* LEFT SIDE — CART ITEMS */
+.cart-items {
+  flex: 1 1 620px;
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.cart-items-title {
+  font-weight: 700;
+  color: #064e3b;
+  font-size: 17px;
+  padding: 18px 22px;
+  margin: 0;
+  border-bottom: 2px solid rgba(5, 150, 105, 0.12);
+}
+
+/* 🧾 CART ITEM ROWS */
+.cart-item-box {
+  display: block;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cart-item-row {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  padding: 18px 22px;
+  border-bottom: 1px solid #f1f6f3;
+}
+
+.cart-item-row:last-child {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* 🖼️ Thumbnail */
+.cart-thumb {
+  width: 100px;
+  min-width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fbfff9;
+  border-radius: 10px;
+  padding: 6px;
+}
+
+.cart-thumb img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* 📝 Details */
+.cart-details {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cart-title {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cart-price {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+  color: #059669;
+}
+
+/* ➕➖ Quantity Control */
+.cart-actions-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  min-width: 150px;
+  justify-content: center;
+}
+
+.qty-a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #eefaf6;
+  border-radius: 12px;
+  padding: 6px;
+  min-width: 150px;
+  box-shadow: 8px 8px 18px rgba(6, 78, 59, 0.06),
+    -8px -8px 18px rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.q-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid rgba(5, 150, 105, 0.12);
+  color: #047857;
+  font-weight: 800;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.14s ease, box-shadow 0.14s ease;
+  box-shadow: 0 2px 6px rgba(5, 150, 105, 0.08);
+}
+
+.q-btn:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(5, 150, 105, 0.12);
+  background: #f8fff9;
+}
+
+.q-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.qty-a input {
+  width: 56px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  text-align: center;
+  font-weight: 700;
+  color: #065f46;
+  font-size: 15px;
+  outline: none;
+}
+
+/* ❌ Remove Button */
+.remove-btn {
+  background: linear-gradient(135deg, #f87171, #ef4444);
+  color: #ffffff;
+  border: none;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 6px 14px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 6px rgba(239, 68, 68, 0.25);
+}
+
+.remove-btn:hover {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(220, 38, 38, 0.3);
+}
+
+.remove-btn:active {
+  transform: translateY(0);
+  opacity: 0.9;
+}
+
+/* 🕊️ Fade-out Animation for Remove */
+.cart-item-box.removing {
+  opacity: 0;
+  transform: translateX(-25px) scale(0.95);
+  filter: blur(1px);
+  transition: all 0.45s cubic-bezier(0.45, 0, 0.25, 1);
+}
+
+/* ✅ Toast Notification */
+.toast {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%) translateY(40px);
+  padding: 12px 22px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  color: #fff;
+  opacity: 0;
+  transition: all 0.4s ease;
+  z-index: 99999;
+}
+
+.toast-success {
+  background: linear-gradient(135deg, #059669, #10b981);
+}
+
+.toast-error {
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* 💳 CART SUMMARY (Right Side Sticky Panel) */
+.cart-summary {
+  flex: 0 1 360px;
+  position: sticky;
+  top: 100px;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 32px 28px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeUp 0.5s ease forwards;
+}
+
+.cart-summary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+}
+
+/* 🧾 Summary Title */
+.summary-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #065f46;
+  margin-bottom: 14px;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+}
+
+.summary-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #10b981, #34d399);
+  margin: 8px auto 0;
+  border-radius: 4px;
+}
+
+/* 💰 Total Price */
+.cart-total {
+  font-family: "Poppins", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #064e3b;
+  text-align: center;
+  margin: 12px 0 20px;
+}
+
+.cart-total span {
+  background: linear-gradient(135deg, #059669, #10b981);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+/* 🟩 Checkout Button */
+.checkout-btn {
+  background: linear-gradient(135deg, #059669, #10b981);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 28px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(5, 150, 105, 0.25);
+  width: 100%;
+  max-width: 260px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.checkout-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.35);
+}
+
+.checkout-btn:active::after {
+  width: 220%;
+  height: 220%;
+  opacity: 1;
+  transition: 0s;
+}
+
+/* 🩶 Continue Shopping */
+.continue-link {
+  font-size: 15px;
+  color: #047857;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: color 0.2s ease;
+}
+
+.continue-link:hover {
+  color: #065f46;
+  text-decoration: underline;
+}
+
+/* 📱 Responsive */
+@media (max-width: 900px) {
+  .cart-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .cart-items,
+  .cart-summary {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .cart-summary {
+    position: static;
+    margin-top: 30px;
+  }
+}
+
+/* 🎬 Fade-up Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
