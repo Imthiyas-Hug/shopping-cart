@@ -2,7 +2,7 @@ import { useNavigate, useOutletContext } from "react-router";
 import "../styles/Cart.css";
 import { useEffect, useState } from "react";
 import confetti from "canvas-confetti";
-
+import emptyCartIcon from "../assets/shopping-cart_18851977.png";
 function Cart() {
   const navigate = useNavigate();
   const {
@@ -133,7 +133,7 @@ function Cart() {
 
       {isCartEmpty && (
         <div className="cart-empty">
-          <img src="src/assets/shopping-cart_18851977.png" alt="Empty cart" />
+          <img src={emptyCartIcon} alt="Empty cart" />
           <p>Your cart is empty</p>
           <button onClick={() => navigate("/shop")}>Continue Shopping</button>
         </div>
@@ -203,7 +203,7 @@ function Cart() {
             </div>
           ))}
         </div>
-        
+
         <div className="cart-summary">
           <h2 className="summary-title">Order Summary</h2>
           <p className="cart-total">
