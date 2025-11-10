@@ -42,10 +42,14 @@ function NavBar() {
   function handleRemove(id) {
     const newCartItems = uniqueCartItems.filter((item) => item.id !== id);
     setUniqueCartItems(newCartItems);
-    setCartItems(newCartItems)
-    if(newCartItems.length == '0'){
-        setIsCartEmpty(true);
+    setCartItems(newCartItems);
+    if (newCartItems.length == "0") {
+      setIsCartEmpty(true);
     }
+    setCartItemQuantity((prev) => ({
+      ...prev,
+      [id]: 0,
+    }));
   }
 
   return (
