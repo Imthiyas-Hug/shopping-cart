@@ -139,7 +139,7 @@ function Cart() {
         </div>
       )}
 
-      {!isCartEmpty && (
+      {(uniqueCartItems.length > 0) && (
       <div className="cart-container">
         <div className="cart-items">
           <p className="cart-items-title">
