@@ -19,7 +19,7 @@ function Cart() {
   const [isCartEmpty, setIsCartEmpty] = isCartEmptyState;
   const [totalPrice, setTotalPrice] = useState(0);
 
-  // ✅ Update total when items or quantities change
+
   useEffect(() => {
     const total = uniqueCartItems.reduce((sum, item) => {
       const qty = Number(cartItemQuantity[item.id]);
@@ -29,7 +29,7 @@ function Cart() {
     setTotalPrice(total);
   }, [uniqueCartItems, cartItemQuantity]);
 
-  // ✅ Toast Notification Function
+
   const showToast = (message, type = "success") => {
     const emoji = type === "error" ? "❌ " : "✅ ";
     const toast = document.createElement("div");
@@ -46,7 +46,7 @@ function Cart() {
     }, 1600);
   };
 
-  // ✅ Checkout Confetti + Toast
+
   const handleCheckoutClick = () => {
     const duration = 3500;
     const animationEnd = Date.now() + duration;
@@ -112,7 +112,7 @@ function Cart() {
     showToast("Order checkout started!", "success");
   };
 
-  // ✅ Fade-out Animation Before Remove
+
   const handleRemoveWithEffect = (id) => {
     const itemEl = document.querySelector(`.cart-item-box[data-id='${id}']`);
     if (itemEl) {
@@ -131,7 +131,7 @@ function Cart() {
     <div>
       <h1 className="section-heading">Your Cart</h1>
 
-      {isCartEmpty && (
+      {(uniqueCartItems.length < 1) && (
         <div className="cart-empty">
           <img src={emptyCartIcon} alt="Empty cart" />
           <p>Your cart is empty</p>
